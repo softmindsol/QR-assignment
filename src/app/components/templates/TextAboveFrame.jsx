@@ -11,7 +11,7 @@ const TextAboveFrame = ({ scale = 1, color, text, qrCodeApiUrl }) => {
   const buttonMinWidth = `${80 * scale}px`;
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center z-0">
       <div
         className="relative mb-2 rounded-lg overflow-hidden"
         style={{
@@ -27,7 +27,7 @@ const TextAboveFrame = ({ scale = 1, color, text, qrCodeApiUrl }) => {
           height={qrSize}
           unoptimized
           priority={scale > 1}
-          className="object-contain absolute top-0 left-0"
+    className="object-contain w-full h-full z-0"
         />
       </div>
       <button

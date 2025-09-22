@@ -1,18 +1,17 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const TextArrowFrame = ({ scale = 1, color, text, qrCodeApiUrl }) => {
-  const borderWidth = `${0.25 * scale}rem`; // Scaled border width
-  const qrSize = Math.min(150 * scale, 140); // Consistent QR size with cap
-
+  const borderWidth = `${0.25 * scale}rem`;
+  const qrSize = Math.min(150 * scale, 140);
 
   return (
-    <div className="flex flex-col items-center"> {/* Changed to flex-col for vertical stack */}
+    <div className="flex flex-col items-center z-0">
       <div
         className="relative mb-2 rounded-lg overflow-hidden"
         style={{
-          width: qrSize + (parseFloat(borderWidth) * 2), 
-          height: qrSize + (parseFloat(borderWidth) * 2), 
+          width: qrSize + parseFloat(borderWidth) * 2,
+          height: qrSize + parseFloat(borderWidth) * 2,
         }}
       >
         <Image
@@ -22,11 +21,9 @@ const TextArrowFrame = ({ scale = 1, color, text, qrCodeApiUrl }) => {
           height={qrSize}
           unoptimized
           priority={scale > 1}
-          className="object-contain absolute top-0 left-0 " // Position QR inside border
-        />  
+          className="object-contain w-full h-full relative z-0"
+        />
       </div>
-    
-      
     </div>
   );
 };
@@ -34,8 +31,8 @@ const TextArrowFrame = ({ scale = 1, color, text, qrCodeApiUrl }) => {
 const config = {
   id: 0,
   type: 0,
-  color: '#000000',
-  text: 'SCAN ME'
+  color: "#000000",
+  text: "SCAN ME",
 };
 
 TextArrowFrame.config = config;

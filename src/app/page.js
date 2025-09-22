@@ -40,7 +40,7 @@ export default function Home() {
           <h1 className="mb-4 text-3xl font-bold text-center text-black">
             Customize QR Code
           </h1>
-        <div className="self-start sticky top-[60px]">
+        <div className="z-50 self-start sticky top-[60px]">
 
           <QRCodePreview
             setSelectedTemplateId={setSelectedTemplateId}
